@@ -1,0 +1,25 @@
+---
+- name: Deploy App on EC2 and Configure NGINX
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Update apt repository
+      apt:
+        update_cache: yes
+
+    - name: Install NGINX
+      apt:
+        name: nginx
+        state: present
+
+    - name: Copy Application Files
+      copy:
+        src: ../app/index.html
+        dest: /var/www/html/index.html
+        mode: '0644'
+
+    - name: Ensure NGINX is running
+      service:
+        name: nginx
+        state: started
+        enabled: yes
