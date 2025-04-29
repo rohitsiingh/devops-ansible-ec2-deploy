@@ -77,7 +77,7 @@ This project demonstrates how to deploy a simple web application to an AWS EC2 i
 
 ---
 
-## 📂 Project Structure
+## 📂 Project Structure description
 
 ```
 ansible/
@@ -92,4 +92,3 @@ README.md
 ```
 
 ---
-
